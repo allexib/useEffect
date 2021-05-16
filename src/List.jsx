@@ -17,8 +17,10 @@ class List extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log({prevProps, prevState, nextProps: this.props,
-            nextState: this.state});
+        //console.log({prevProps, prevState, nextProps: this.props, nextState: this.state});
+        if (this.state.numbers.length !== prevState.numbers.length) {
+            console.log('список чисел обновился');
+        }
     }
 
     render() {
