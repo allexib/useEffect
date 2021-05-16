@@ -1,17 +1,27 @@
 import React from "react";
 
 class List extends React.Component {
+    state = {
+        numbers: [1, 2, 3]
+    };
+
+    addRandonNumber = () => {
+        const randNumber = Math.round(Math.random() * 10);
+        this.setState({
+            numbers: [...this.state.numbers, randNumber]
+        });
+    }
 
     render() {
         return (
             <div>
                 <ul>
-                    test
-                    {/*{numbers.map((num, index) => (*/}
-                        {/*<li key={index}>{num}</li>*/}
-                    {/*))}*/}
+                    
+                    {this.state.numbers.map((num, index) => (
+                        <li key={index}>{num}</li>
+                    ))}
                 </ul>
-                <button onClick={null}>Новое число</button>
+                <button onClick={this.addRandonNumber}>Новое число</button>
             </div>
         );
     }
