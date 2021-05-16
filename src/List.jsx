@@ -44,6 +44,7 @@ import React from "react";
 
 const List = () => {
     const [numbers, setNumbers] = React.useState([1, 555, 3]);
+    const [count, setCount] = React.useState(0);
 
     const addNumber = () => {
         const randNumber = Math.round(Math.random() * 10);
@@ -51,13 +52,15 @@ const List = () => {
         setNumbers(newArr);
     };
 
-    //componentDidMount
+
     React.useEffect(() => {
-        console.log('компонент был отображен');
-    }, []);
+        console.log('список чисел был обновлен');
+    }, [numbers, count]);
 
     return (
         <div>
+            <h1>{count}</h1>
+            <button onClick={() => setCount(count + 1)}>+</button>
             <ul>
                 {numbers.map((num, index) => (
                     <li key={index}>{num}</li>
