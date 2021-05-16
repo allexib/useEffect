@@ -17,7 +17,8 @@ class List extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps, prevState);
+        console.log({prevProps, prevState, nextProps: this.props,
+            nextState: this.state});
     }
 
     render() {
