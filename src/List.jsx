@@ -23,6 +23,10 @@ class List extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        console.log('компонент будет удален');
+    }
+
     render() {
         return (
             <div>
