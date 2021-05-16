@@ -54,8 +54,11 @@ const List = () => {
 
 
     React.useEffect(() => {
-        console.log('список чисел был обновлен');
-    }, [numbers, count]);
+        console.log('did mount');
+        return () => {
+            console.log('will unmount');
+        };
+    }, []);
 
     return (
         <div>
